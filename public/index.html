@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MITAKE Value</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="hero-head">
+          <div>
+            <p class="eyebrow">Taiwan stock asset value</p>
+            <h1>MITAKE Portfolio</h1>
+            <p id="source-note">Loading Yahoo Finance prices...</p>
+          </div>
+          <div class="hero-change neutral" id="hero-gain">--</div>
+        </div>
+
+        <div class="summary-grid">
+          <article class="card">
+            <span class="label">Total Market Value</span>
+            <strong class="money" id="total-market-value">--</strong>
+          </article>
+          <article class="card split-card">
+            <div>
+              <span class="label">Total Cost</span>
+              <strong class="money" id="total-cost">--</strong>
+            </div>
+            <div class="split-side">
+              <span class="label">Return</span>
+              <strong class="money small" id="total-gain-percent">--</strong>
+            </div>
+          </article>
+          <article class="card accent-card">
+            <span class="label">Unrealized Gain/Loss</span>
+            <strong class="money accent" id="total-gain-value">--</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="holdings-card">
+        <div class="holdings-head">
+          <div>
+            <h2>Holdings</h2>
+            <p id="positions-count">0 positions</p>
+          </div>
+          <div class="holdings-actions">
+            <div class="column-toggles" aria-label="Column visibility">
+              <button class="column-toggle active" id="toggle-shares" type="button" aria-pressed="true">Shares</button>
+              <button class="column-toggle active" id="toggle-cost" type="button" aria-pressed="true">Cost</button>
+              <button class="column-toggle active" id="toggle-price" type="button" aria-pressed="true">Price</button>
+            </div>
+            <button class="refresh-button" id="refresh-button" type="button">Refresh</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table id="holdings-table">
+            <thead>
+              <tr>
+                <th><button class="sort-button active" type="button" data-sort-key="symbol" data-sort-direction="asc">Symbol <span class="sort-indicator">▲</span></button></th>
+                <th><button class="sort-button" type="button" data-sort-key="name" data-sort-direction="none">Name <span class="sort-indicator">↕</span></button></th>
+                <th data-column="shares"><button class="sort-button" type="button" data-sort-key="shares" data-sort-direction="none">Shares <span class="sort-indicator">↕</span></button></th>
+                <th data-column="cost"><button class="sort-button" type="button" data-sort-key="averageCost" data-sort-direction="none">Avg Cost <span class="sort-indicator">↕</span></button></th>
+                <th data-column="price"><button class="sort-button" type="button" data-sort-key="price" data-sort-direction="none">Price <span class="sort-indicator">↕</span></button></th>
+                <th><button class="sort-button" type="button" data-sort-key="marketValue" data-sort-direction="none">Market Value <span class="sort-indicator">↕</span></button></th>
+                <th><button class="sort-button" type="button" data-sort-key="gainValue" data-sort-direction="none">Gain/Loss <span class="sort-indicator">↕</span></button></th>
+                <th><button class="sort-button" type="button" data-sort-key="gainPercent" data-sort-direction="none">Return <span class="sort-indicator">↕</span></button></th>
+                <th><button class="sort-button" type="button" data-sort-key="dayChangePercent" data-sort-direction="none">Day Chg <span class="sort-indicator">↕</span></button></th>
+                <th><button class="sort-button" type="button" data-sort-key="perf1d" data-sort-direction="none">1D <span class="sort-indicator">↕</span></button></th>
+                <th><button class="sort-button" type="button" data-sort-key="perf3d" data-sort-direction="none">3D <span class="sort-indicator">↕</span></button></th>
+                <th><button class="sort-button" type="button" data-sort-key="perf5d" data-sort-direction="none">5D <span class="sort-indicator">↕</span></button></th>
+                <th><button class="sort-button" type="button" data-sort-key="perf20d" data-sort-direction="none">20D <span class="sort-indicator">↕</span></button></th>
+                <th><button class="sort-button" type="button" data-sort-key="estimatedProceeds" data-sort-direction="none">Est. Proceeds <span class="sort-indicator">↕</span></button></th>
+              </tr>
+            </thead>
+            <tbody id="holdings-body">
+              <tr><td colspan="14" class="empty-state">Loading holdings...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
