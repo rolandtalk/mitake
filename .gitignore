@@ -1,0 +1,10 @@
+node_modules/
+.pnpm-store/
+.wrangler/
+.wrangler-config/
+dist/
+.reference*/
+*.zip
+data/
+*.log
+run-local-server.mjs
