@@ -7,6 +7,8 @@
     "dev:local": "node scripts/local-server.mjs",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
+    "build:inline": "tsc --noEmit false --outDir dist --rootDir src --module ES2022 --target ES2022 && node scripts/build-inline-worker.mjs",
+    "deploy:api": "pnpm run build:inline && node scripts/deploy-cloudflare-api.mjs",
     "check": "tsc --noEmit"
   },
   "devDependencies": {
