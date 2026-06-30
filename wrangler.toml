@@ -1,6 +1,7 @@
 name = "mitake"
 main = "src/index.ts"
 compatibility_date = "2026-06-29"
+account_id = "dc71e29616572418b1671b2b297fafab"
 
 [assets]
 directory = "public"
